@@ -1,6 +1,6 @@
 config = { 
 	port: process.env.PORT || 3001
-	,dev: process.env.NODE_ENV = process.env.NODE_ENV || "dev"
+	,dev: process.env.NODE_ENV = process.env.NODE_ENV || "development"
 	,mongo: {
 		dev: {
 			host: "localhost",

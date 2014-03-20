@@ -4,7 +4,7 @@ module.exports = function(config){
 		db = mongo.connection,
 		q = require('q');
 		ObjectId = mongo.Schema.Types.ObjectId,
-		details = config.dev === 'dev' ? config.mongo.dev : config.mongo.production,
+		details = config.dev == 'development' ? config.mongo.dev : config.mongo.production,
 		connection = ["mongodb:/", details.host+(details.port ? ":"+details.port : ""),details.db].join('/')
 
 	trace("MONGO:: try to connect to "+details.host);
