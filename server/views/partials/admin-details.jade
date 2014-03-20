@@ -1,0 +1,41 @@
+.element
+	label Avatar
+	.fileUpload
+		input#avatarSelector.hidden(type="file", ng-file-select="addFile($files, cu, 'avatar', 'avatars')", accept="image/*")
+		a.selector(ng-click="initFile($event)") modify
+		a.remover(ng-click="removeFile($event, cu, 'avatar')", ng-show="cu.avatar")
+			img(ng-src="{{cu.avatar}}")
+		
+.element
+	label(for="_id") ID
+	input(disabled, value="{{cu._id}}", name="_id", ng-model="cu._id")
+.element
+	label(for="name") Name
+	input(required, name="cu.name", ng-model="cu.name")
+.element
+	label(for="surname") Surname
+	input(required, name="surname", ng-model="cu.surname")
+.element.datepicker
+	label(for="birth") Date of birth
+	input(required, name="birth", ng-model="cu.birth", datepick, disabled, data-range="1950:2000", data-rangeYear="20")
+.element
+	label(for="location") Location
+	input(name="location", ng-model="cu.location")
+.element
+	label(for="country") Country
+	input(required, name="country", ng-model="cu.country")
+.element
+	label(for="description") Description
+	textarea(name="name", ng-model="cu.description") {{cu.description}}
+.element
+	label(for="homepage") Homepage
+	input(name="homepage", ng-model="cu.homepage")
+
+.element
+	label Background
+	.fileUpload
+		input#backgroundSelector.hidden(type="file", ng-file-select="addFile($files, cu, 'background','backgrounds')", accept="image/*")
+		a.selector(ng-click="initFile($event)") modify
+		a.remover(ng-click="removeFile($event, cu, 'background')", ng-show="cu.background")
+			img(ng-src="{{cu.background}}")
+	

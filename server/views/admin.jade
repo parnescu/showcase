@@ -1,0 +1,50 @@
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, height=device-height, user-scalable=no")
+		meta(name="apple-mobile-web-app-capable" content="yes")
+		
+		title Showcase App - Admin
+		link(rel="stylesheet", href="/jquery-ui/themes/cupertino/jquery-ui.css")
+		link(rel="stylesheet", href="/css/admin.css")
+		
+		script(type="text/javascript", src="/danialfarid-angular-file-upload/dist/angular-file-upload-html5-shim.min.js")
+		script(type="text/javascript", src="/jquery/jquery.js")
+		script(type="text/javascript", src="/jquery-ui/ui/jquery.ui.core.js")
+		script(type="text/javascript", src="/jquery-ui/ui/jquery.ui.datepicker.js")
+		
+		script(type="text/javascript", src="/angular/angular.js")
+		script(type="text/javascript", src="/angular-route/angular-route.js")
+		script(type="text/javascript", src="/danialfarid-angular-file-upload/dist/angular-file-upload.min.js")
+	body(ng-controller="MainCtrl")
+		#page
+			header#head
+				h1 dministration
+				nav(ng-hide="cu")
+					a.addUsers(ng-click="addUser($event)", title="Add new user", href="#newUser")
+						span.glyphicon.glyphicon-file 
+						| new user
+					span.preloader(ng-show="_loadingInProgress")
+					ul
+						li(ng-repeat="user in users")
+							h2 
+								a(href="/admin/{{user._id}}", ng-click="showUser($event, $index)") {{user.name}} {{user.surname}}
+			p.alert dooone
+			section#main(ng-show="cu")
+				a.cancel.glyphicon.glyphicon-remove(href="", ng-click="hideUser($event)")
+				header#menu
+					h2 {{cu.name}} {{cu.surname}}
+					nav
+						a.toggle(ng-click="toggleMenu($event)") {{_menuText}}
+						ul(ng-class="{active: _menuVisible}")
+							li(ng-repeat="link in tabs")
+								a(ng-class="{selected: _currentTab == link.id}", href="?action={{link.id}}", data-id="{{link.id}}", title="{{link.name}}") {{link.name}} 
+				section#content
+					form(ng-submit="saveUser($event)", id="dataForm", flow-init, name="dataForm")
+						fieldset(ng-view)
+						
+						.actions
+							button.save(ng-disabled="dataForm.$invalid") {{saveButton}}
+							a.cancel(href="", ng-click="hideUser($event)") cancel
+			footer
+				script(type="text/javascript", src="/js/_admin.js")

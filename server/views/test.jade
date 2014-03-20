@@ -1,0 +1,40 @@
+html
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, height=device-height, user-scalable=no")
+		meta(name="apple-mobile-web-app-capable" content="yes")
+		
+		title Showcase App - Test
+		link(rel="stylesheet", href="/jquery-ui/themes/cupertino/jquery-ui.css")
+		link(rel="stylesheet", href="/css/style.css")
+		
+	body.loaded
+		#page
+			header#head
+			section#main
+				
+
+				<section ng-class="{selected: currentArticleId=='employers'}" class="stack selected"><header><h2><a href="#section-employers" title="Working Experience" data-id="employers" ng-click="showArticle($event)" class="">x5</a></h2></header><article class="employers"><ul><!-- ngRepeat: employer in loadedData.employer --><li ng-repeat="employer in loadedData.employer" class=""><a href="" title="" target="_blank" class="logo"><img ng-src="/res/logos/big_jasmine_logo.1393503188294.1394530565668.png" alt="" src="/res/logos/big_jasmine_logo.1393503188294.1394530565668.png"></a><div class="wrap ng-binding"><div class="element"><label>Company</label><h3 class="ng-binding">dasjknd akjsn dkjasdasdsa</h3></div><div class="element"><label>Website</label><a href="" title="" target="_blank" class="ng-binding">dasdsa asd asd as dsa</a></div><div class="pannel"><label>description</label><div class="summary ng-binding">asd;kasln dlkasmdlksamdkasmdlasn djkand jasnd asjlndsjal daslmd.akdmask;dasdas</div></div><div class="pannel"><label>notable projects</label><ul class="projectsList"><!-- ngRepeat: project in employer.projects --><li>1</li><li>1</li><li>1</li><li>1</li></ul></div><div class="pannel"><label>reason</label><div class="summary ng-binding">dsaljdn skajndkjas ndjksa ndjkas ndjasn dkas</div></div><div class="extras">sd153as01d35a01d35a0 1d35as0d1 35as01d 35as01d5a3sdasra rasdasd as</div></div></li><!-- end ngRepeat: employer in loadedData.employer --></ul></article></section>
+
+				section.tab.selected
+					header
+						h2
+							a(href="#section-school" title="Education" data-id="school") x2
+
+					article.school
+						ul.school.selected_0
+							li.selected
+								div.head
+									h3 Shigeru Myiamoto
+									p.years February, 2014 - February, 2014
+								
+								iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1424.7030084140556!2d26.177606470274732!3d44.42483308094976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sro!4v1394545187052" width="100%" height="150" frameborder="0" class="map")
+								
+								ul.body
+									li specialty: 
+										span bla bla
+									li degree paper: 
+										span more bla bla
+								p.extras dasdsadasdsadsa
+
+										

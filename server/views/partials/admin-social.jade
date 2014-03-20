@@ -1,0 +1,16 @@
+.element
+	label social
+	a.add.glyphicon.glyphicon-plus-sign(ng-click="addItem($event, cu, 'social')", href="")
+	ul
+		li(ng-repeat="item in cu.social")
+			a.remove(href="", ng-click="removeItem($event, $index, cu.social, 'social')") x
+			.subelement
+				p
+					label(for="social_title") type
+					input(name="social_title", ng-model="item.title", required)
+				p
+					label(for="social_user") username
+					input(name="social_user", ng-model="item.user", required)
+				p
+					label(for="social_link") link
+					input(name="social_link", ng-model="item.link", required)

@@ -1,0 +1,178 @@
+{
+	"about":{
+		"details":{
+			"name": "Parnescu",
+			"surname": "Adrian",
+			"birth": 434764800000,
+			"location": "Bucharest",
+			"country": "Romania"
+		},
+
+		"social": {
+			"linkedin": {
+				"link": "http://www.linkedin.com",
+				"pic": "http://"
+			}
+		},
+
+		"background":[
+			{ "pic": "http://", "comments": ""}
+			,{ "pic": "http://", "comments": ""}
+		]
+	},
+
+	"sections": [
+		{ 
+			"link":"description",
+			"title":"x1",
+			"type": "text",
+			"content": {
+				"description": "Lorizzle dizzle shizzle"
+				,"items" : [
+
+				]
+			}
+		}
+		,{ 
+			"link":"education",
+			"title":"x2",
+			"type": "tab",
+			"content": {
+				"description": "edumacation"
+			}
+		}
+		,{ 
+			"link":"language",
+			"title":"x3",
+			"type": "bubble",
+			"content": {
+				"description": "<p>I'm coming from an “old-school” programming background, I started with Sinclair Basic on my ZX-Spectrum when I was little and continued with Borland Pascal, Borland C++ and Visual Fox Pro in high-school and fell in love with coding.</p><p>Now I LOVE javascript and actionscript3. I know my way around php, sql, html, css and I've had to deal a little bit with java. I think I can still do design in photoshop and I've crossed paths with adobe after effects plenty of times.</p><p>I've developed a huge number of websites, single and multiplayer games, desktop and small mobile applications. I'm addicted to my Macbook Pro, Flash Builder and Coda2 IDEs.</p><p>I love object oriented thinking in programming, reusing code and I have an absolute obsession with code indentation, dynamic and scalable entities.</p><p>I'm always experimenting and trying to learn new things, my latest craze is backbonejs and the stage3d based starling framework and box2d intrigues me more than it should.</p><p>I'd love to have the available free time to learn java and haxe and my hobby/dream is to become a game developer.</p>"
+				,"items" : [
+					{
+						"name": "romanian",
+						"level": "native",
+						"description": "putem purta o discutie despre orice, cel mai mult imi face placere sa discut despre jocuri"
+					},
+					{
+						"name": "english",
+						"level": "advanced",
+						"description": "I've learned english from watching cartoons all day and bugging my mom about what <this> and <that> means"
+					},
+					{
+						"name": "spanish",
+						"level": "intermediary",
+						"description": "hace mucho tiempo desde que he hablado español, pero con un poquito de cerveza creo que puedo recordar todo lo que he olvidado"
+					}
+				]
+			}
+		}
+		,{ 
+			"link":"skills",
+			"title":"x4",
+			"type": "meter",
+			"content": {
+				"description": "meterz"
+			}
+		}
+		,{ 
+			"link":"employers",
+			"title":"x5",
+			"type": "stack",
+			"content": {
+				"description": "mployrz"
+			}
+		}
+		,{ 
+			"link":"projects",
+			"title":"x6",
+			"type": "fill",
+			"content": {
+				"description": "all di projects"
+			}
+		}
+	],
+
+	"education": [
+		{
+			"type": "highschool",
+			"name": "Nichita Stanescu High School",
+			"years": "1998-2002",
+			"link": "",
+			"location": "",
+			"specialty": "Computer Science",
+			"degreepaper": "my degree submission was composed of three very complex applications",
+			"extras" : "main app was a fictional perfume store in FoxPro, next a HTML website about Dragon Ball Z and finally a Flash5 presentation about Ruff Ryders"
+		}
+		,{
+			"type": "university",
+			"name": "The Bucharest University of Economic Studies",
+			"years": "2002-2007",
+			"link": "",
+			"location": "",
+			"specialty": "economic cybernetics",
+			"degreepaper": "genetic algorithms, optimization and minimization of waste & resources",
+			"extras" : "my degree app was a simulation of waste minimization made with macromedia flash 7"
+		}
+	],
+
+	"employers": [
+		{
+			"id": "vw",
+			"fullName": "dadasnk ",
+			"logo": "http://visualweb.es/wp-content/uploads/2013/11/visualweb_logo-502x80.png",
+			"link": "the link",
+			"description": "mo descript",
+			"projects": [
+				{ "name":"prj one", "link":"link one"}
+				,{ "name":"prj two", "link":"link two"}
+			],
+			"departure": "the reason",
+			"extras": "bla bla extras"
+		},
+		{
+			"id": "gpx",
+			"fullName": "fnaskjdelr",
+			"logo": "http://greenpixel.ro/_res/img/logo.gif",
+			"link": "the link",
+			"description": "",
+			"projects": [
+				{ "name":"prj one", "link":"link one"}
+				,{ "name":"prj two", "link":"link two"}
+			],
+			"departure": "the reason",
+			"extras": "bla bla extras"
+		}
+	],
+
+	"skills": [
+		{
+			"name": "javascript",
+			"value": 92,
+			"frameworks": [
+				{ "name": "backbonejs", "value": 94}
+				,{ "name": "angularjs", "value": 64}
+			]
+		}
+		,{
+			"name": "html",
+			"value": 100
+		}
+		,{
+			"name": "css",
+			"value": 87,
+			"frameworks": [
+				{ "name": "sass", "value": 23 }
+			]
+		}
+	],
+
+	"projects":[
+		{
+			"tags": ["js", "flash", "html", "css", "java","as3" ]
+			,"companyId": "gpx"
+			,"name": "mija pija"
+		}
+	]
+
+}
+

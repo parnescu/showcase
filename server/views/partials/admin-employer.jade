@@ -1,0 +1,42 @@
+.element
+	label employrz
+	a.add.glyphicon.glyphicon-plus-sign(ng-click="addItem($event, cu, 'employer')", href="") &nbsp;
+	ul
+		li(ng-repeat="item in cu.employer")
+			a.remove(href="", ng-click="removeItem($event, $index, cu.employer,'employer')") x
+			h2 {{item.name}}
+			.subelement
+				.wrap
+					label Logo
+					.fileUpload
+						input#logoSelector.hidden(type="file", ng-file-select="addFile($files, item, 'logo', 'logos')", accept="image/*")
+						a.selector(ng-click="initFile($event, 'logoSelector')") modify
+						a.remover(ng-click="removeFile($event, item, 'logo')", ng-show="item.logo")
+							img(ng-src="{{item.logo}}")
+				p
+					label(for="e_id") company id
+					input(required, ng-model="item.companyId", name="e_id")
+				p
+					label(for="e_name") company name
+					input(required, ng-model="item.name", name="e_name")
+				
+				.time.datepicker
+					label timeframe
+					.wrap
+						label(for="ed_time_from") from
+						p
+							input(name="ed_time_from", ng-model="item.timeframe.join", required, datepick, disabled, data-range="1980:*")
+						label(for="ed_time_to") to
+						p
+							input(name="ed_time_to", ng-model="item.timeframe.leave", required, datepick, disabled, data-range="1980:*")
+				
+				p
+					label(for="e_description") description
+					textarea(required, ng-model="item.description", name="e_description")
+				p
+					label(for="e_departure") departure 
+					input(ng-model="item.departure", name="e_departure")
+				p
+					label(for="e_extras") extras
+					input(ng-model="item.extras", name="e_extras")
+				

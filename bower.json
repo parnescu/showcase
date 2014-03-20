@@ -1,0 +1,25 @@
+{
+  "name": "showcase",
+  "version": "0.0.0",
+  "authors": [
+    "Parnescu Adrian"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "*",
+    "jquery": "*",
+    "jquery-ui": "*",
+    "angular": "~1.2.12",
+    "angular-resource": "~1.2.12",
+    "angular-route": "~1.2.12",
+    "angular-touch": "~1.2.13",
+    "danialfarid-angular-file-upload": "~1.2.8"
+  }
+}

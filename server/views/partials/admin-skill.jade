@@ -1,0 +1,28 @@
+.element
+	ul
+		li(ng-repeat="item in cu.skill")
+			a.remove(href="", ng-click="removeItem($event, $index, cu.skill, 'skill')") x
+			p
+				label(for="item_name") name
+				input(ng-model="item.name", name="item_name", required)
+			p
+				label(for="item_value") expertise
+				input(ng-model="item.value", name="item_value", type="range", required, min=0, max=100, value=0)
+				input(value="{{item.value}}", disabled, type="number", min=0, max=100, required)
+
+			.subelement
+				ul 
+					li.subelement(ng-repeat="fw in item.frameworks")
+						a.remove(href="#", ng-click="removeItem($event, $index, item.frameworks)") x
+						p
+							label(for="fw_name") name
+							input(ng-model="fw.name", name="fw_name", required)
+						p
+							label(for="fw_value") expertise
+							input(ng-model="fw.value", name="fw_value", type="range", required, min=0, max=100, value=0)
+							input(value="{{fw.value}}", disabled, type="number", min=0, max=100, required)
+				
+				label frameworks
+				a.add(ng-click="addItem($event, item, 'frameworks')") add
+	label skills
+	a.add.glyphicon.glyphicon-plus-sign(ng-click="addItem($event, cu, 'skill')", href="")							

@@ -1,0 +1,162 @@
+html(ng-class="{loaded: loadedData}")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, height=device-height, user-scalable=no")
+		meta(name="apple-mobile-web-app-capable" content="yes")
+		title Showcase App
+
+		link(href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css')
+		link(href="css/style.css", rel="stylesheet")
+		
+		script(type="text/javascript", src="jquery/jquery.min.js")
+		script(type="text/javascript", src="angular/angular.js")
+		script(type="text/javascript", src="/angular-route/angular-route.js")
+		script(type="text/javascript", src="angular-touch/angular-touch.js")
+
+	body(ng-controller='MainCtrl', ng-class="{loaded: loadedData}")
+		#boot(ng-hide="loadedData")
+			img(src="/res/_img/preloader.gif" alt="preloader")
+		#page(ng-show="loadedData")
+			header#head
+				img#avatar(ng-src="{{loadedData.avatar}}")
+				#social 
+					ul 
+						li(ng-repeat="item in loadedData.social")
+							a(href="{{item.link}}", title="see {{item.title}}", class="{{item.title}}", target="_blank") {{item.title}}
+				#details
+					h1 {{loadedData.name}} {{loadedData.surname}} 
+					p.birth {{loadedData.birth | date:'dd MMMM yyyy'}}
+					p.location 
+						span.city {{loadedData.location}}
+						span.country {{loadedData.country}}
+				#slideshow
+					img.slide(ng-src="{{loadedData.background}}" ng-alt="{{loadedData.background}}")
+			section#main
+				section(ng-class="{selected: currentArticleId=='description'}")
+					header
+						h2
+							a(href="#section-description", title="Description", data-id="description", ng-click="showArticle($event)") x1
+					article.description
+						p.description {{loadedData.description}}
+				section.tab(ng-class="{selected: currentArticleId=='school'}")
+					header
+						h2
+							a(href="#section-school", title="Education", data-id="school", ng-click="showArticle($event)") x2
+					article.school
+						ul.controls(class="items_{{loadedData.school.length}}")
+							li(ng-repeat="el in loadedData.school")
+								a(href="#", ng-click="changeSlide($event, currentEducation)", data-id="{{$index}}", ng-class="{selected: currentEducation==$index}") &nbsp;
+						ul.school(class="selected_{{currentEducation}}")
+							li(ng-repeat="school in loadedData.school", ng-class="{selected: currentEducation == $index}", ng-swipe-right="changeSlideBySwipe('right', currentEducation)", ng-swipe-left="changeSlideBySwipe('left', currentEducation)")
+								.head
+									h3 {{school.name}}
+									p.years {{school.timeframe.join | date:'MMMM yyyy'}} - {{school.timeframe.leave| date:'MMMM yyyy'}}							
+								iframe.map(ng-src="{{school._link}}" width="100%" height="150" frameborder="0")
+								ul.body
+									li
+										|specialty: 
+										span {{school.specialty}}
+									li
+										|degree paper:
+										span {{school.degreepaper}}
+								p.extras(ng-show="school.extras")
+										|{{school.extras}}
+				section.bubble(ng-class="{selected: currentArticleId=='language'}")
+					header
+						h2
+							a(href="#section-language", title="Verbal Skills", data-id="language", ng-click="showArticle($event)") x3
+					article.language
+						ul.lang
+							li(ng-repeat="lang in loadedData.language")
+								a(title="{{lang.name}}", class="{{lang.name}}", data-level="{{lang.level}}", data-description="{{lang.description}}")
+				section.meter(ng-class="{selected: currentArticleId=='skills'}")
+					header
+						h2
+							a(href="#section-skills", title="Skills", data-id="skills", ng-click="showArticle($event)") x4
+					article.description
+						ul
+							li(ng-repeat="skill in loadedData.skill", ng-class="{selected: skill._selected, hasFrameworks: skill.frameworks.length>0}")
+								.stats
+									h3.icon(class="{{skill.name}}")
+										a(href="#", ng-click="showFrameworks($event, skill)", title="{{skill.name}}") {{skill.name}}
+									p.grid
+										span(style="width: {{skill.value}}%")
+										span(style="width: {{skill.value}}%") mastered around {{skill.value}}% of it
+									a.glyphicon.showProjects(href="#filter:{{skill.name}}", title="Show projects made with {{skill.name}}")
+								ul.frameworks(ng-show="skill._selected")
+									li.stats(ng-repeat="fmw in skill.frameworks")
+										h4.icon(class="{{fmw.name}}", ng-click="$event.preventDefault()") 
+											a(href="#", title="{{fmw.name}}") {{fmw.name}}
+										p.grid
+											span(style="width:{{fmw.value}}%")
+											span(style="width:{{fmw.value}}%") mastered around {{fmw.value}}% of it
+										a.glyphicon.showProjects(href="#filter:{{fmw.name}}", title="Show projects made with {{fmw.name}}")
+				section.stack(ng-class="{selected: currentArticleId=='employers'}")
+					header
+						h2
+							a(href="#section-employers", title="Working Experience", data-id="employers", ng-click="showArticle($event)") x5
+					article.employers
+						ul 
+							li(ng-repeat="employer in loadedData.employer", class="{{employer.id}}")
+								a.logo(href="{{employer.link}}", title="{{employer.fullName}}", target="_blank")
+									img(ng-src="{{employer.logo}}", alt="{{employer.fullName}}")
+								.wrap
+									.element 
+										label Company
+										h3 {{employer.name}}
+									.element 
+										label Website
+										a(href="{{employer.link}}", title="{{employer.fullName}}", target="_blank") {{employer.link}}
+
+									.pannel 
+										label description
+										.summary {{employer.description}}
+									
+									.pannel 
+										label notable projects
+										ul.projectsList
+											li(ng-repeat="project in employer.projects")
+												a(href="{{project.link}}", title="{{project.name}}") {{project.name}}
+
+									.pannel 
+										label reason
+										.summary {{employer.departure}}
+									.extras
+										|{{employer.extras}}
+				section.fill(ng-class="{selected: currentArticleId=='projects'}")
+					header
+						h2
+							a(href="#section-projects", title="Projects", data-id="projects", ng-click="showArticle($event)") x6
+					article.projects
+						a.clear(ng-show="currentFilter", title="Clear Filtering", ng-click="clearFilters($event)") filter by: {{currentFilter}}
+						ul
+							li(ng-repeat="project in loadedData.project", ng-class="project.tags", id="{{project.name}}", class="{{project.companyId}}", data-enabled="{{project.enabled}}")
+								h3
+									a(ng-click="showProject($event, $index)", href="#projects/{{project.name}}", title="{{project.name}}")
+										.title(ng-show="!project.media")
+											|{{project.name}}
+										.showcase(ng-show="project.media")
+											img(ng-src="{{project.media[0].img}}", alt="project.name")
+
+			section#projectDetails(ng-show="currentProject")
+				h1 {{currentProject.name}}
+
+				.pannel
+					label description
+					.summary {{currentProject.description}}
+
+				.pannel
+					label techonologies used
+					ul.tags
+						li.icon(ng-repeat="tag in currentProject.tags", class="{{tag}}")
+							a(href="#filter:{{tag}}", title="{{tag}}") {{tag}}
+
+				.pannel 
+					label challenges faced
+
+				.pannel
+					label extras
+				button(ng-click="hideProject($event)") close
+
+			footer
+				script(type="text/javascript", src="js/main.js")

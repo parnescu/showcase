@@ -1,0 +1,1 @@
+web: DEV = 'production' && node server/server.js

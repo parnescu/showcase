@@ -1,0 +1,59 @@
+/*
+	icon colors
+	- start gradient: #d4dfd0;
+	- end gradient: #809986;
+	- tooltip: #f90f90;
+*/
+.icon, 
+.icon { border-radius:50%;
+	background: #d4dfd0;
+	background: linear-gradient(to bottom, 
+		#d4dfd0 0%,
+		#809986 100%);
+}
+
+.icon a { background-repeat: no-repeat; background-position: 50% 50%; position:relative; overflow: visible}
+.icon a:hover { z-index:100;}
+.icon a:hover:before { 
+	content: attr(title);
+	background: #f90f90;
+	font-size: 0.8em;
+	color: #fff;
+	position: absolute;
+	width:auto;
+	left: 2.6em;
+	top: 21%;
+	padding:0 0.8em;
+	border-radius: 0.3em;
+	text-indent: 0;
+	font-weight: normal;
+}
+.icon a:hover:after  { 
+	content: "";
+	position: absolute;
+	left: 1.4em;
+	top: 30%;
+	width: 0;
+	height: 0;
+	border: 0.4em solid transparent;
+	border-right-color: #f90f90;
+}
+
+/* main skills */
+.javascript > a { background:url('../res/_img/logos/javascript.png'); background-size: cover;}
+.html > a { background:url('../res/_img/logos/html.png'); background-size: cover;}
+.css > a { background:url('../res/_img/logos/css.png'); background-size: cover;}
+.actionscript3 > a { background:url('../res/_img/logos/actionscript.png'); background-size: cover;}
+.php > a { background:url('../res/_img/logos/php.png'); background-size: cover;}
+
+/* frameworks */
+.air > a { background:url('../res/_img/logos/air.png'); background-size: cover;}
+.starling > a { background:url('../res/_img/logos/starling.png'); background-size: cover;}
+.feathers > a { background:url('../res/_img/logos/feathers.png'); background-size: cover;}
+.angularjs > a { background:url('../res/_img/logos/angularjs.png'); background-size: cover;}
+.backbonejs > a { background:url('../res/_img/logos/backbonejs.png'); background-size: cover;}
+.requirejs > a { background:url('../res/_img/logos/requirejs.png'); background-size: cover;}
+.jasmine > a { background:url('../res/_img/logos/jasmine.png'); background-size: cover;}
+.jquery > a { background:url('../res/_img/logos/jquery.png'); background-size: cover;}
+.jqueryui > a { background:url('../res/_img/logos/jqueryui.png'); background-size: cover;}
+.jquerymobile > a { background:url('../res/_img/logos/jquerymobile.png'); background-size: cover;}

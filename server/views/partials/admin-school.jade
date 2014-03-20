@@ -1,0 +1,39 @@
+.element
+	label edumacation
+	a.add.glyphicon.glyphicon-plus-sign(ng-click="addItem($event, cu, 'school')", href="")
+	ul
+		li(ng-repeat="item in cu.school")
+			a.remove(href="", ng-click="removeItem($event, $index, cu.school,'school')") x
+			.subelement 
+				p
+					label(for="ed_title") type
+					input(name="ed_title", ng-model="item.type", required)
+				p
+					label(for="ed_name") name
+					input(name="ed_name", ng-model="item.name", required)
+				.time.datepicker
+					label timeframe
+					.wrap
+						label(for="ed_time_from") from
+						p
+							input(name="ed_time_from", ng-model="item.timeframe.join", required, datepick, disabled, data-range="1980:*")
+						label(for="ed_time_to") to								
+						p
+							
+							input(name="ed_time_to", ng-model="item.timeframe.leave", required, datepick, disabled, data-range="1980:*")
+				p
+					label(for="ed_location") location
+					input(name="ed_location", ng-model="item.location")
+				p
+					label(for="ed_special") specialty
+					input(name="ed_special", ng-model="item.specialty")
+				p
+					label(for="ed_paper") paper
+					input(name="ed_paper", ng-model="item.paper")
+				p
+					label(for="ed_link") link
+					input(name="ed_link", ng-model="item.link")
+				p
+					label(for="ed_extras") extras
+					textarea(name="ed_extras", ng-model="item.extras")
+				

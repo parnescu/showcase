@@ -1,0 +1,18 @@
+.element
+	label lang
+	a.add.glyphicon.glyphicon-plus-sign(ng-click="addItem($event, cu, 'language')", href="") &nbsp;
+	ul
+		li(ng-repeat="item in cu.language")
+			a.remove(href="", ng-click="removeItem($event, $index, cu.language, 'language')") x
+			.subelement
+				p 
+					label(for="lang_title") name
+					input(name="lang_title", ng-model="item.name", required)
+
+				p
+					label(for="lang_level") level
+					input(name="lang_level", ng-model="item.level", required)
+
+				p
+					label(for="lang_desc") description
+					textarea(name="lang_desc", ng-model="item.description", required)

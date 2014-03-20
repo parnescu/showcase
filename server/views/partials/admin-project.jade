@@ -1,0 +1,53 @@
+.element
+	label projects
+	a.add.glyphicon.glyphicon-plus-sign(ng-click="addItem($event, cu, 'project')", href="")
+	ul
+		li(ng-repeat="item in cu.project")
+			a.remove(href="", ng-click="removeItem($event, $index, cu.project, 'project')") x
+			.subelement
+				p
+					label companyid
+					input(ng-model="item.companyId", required)
+				p
+					label project name
+					input(ng-model="item.name", required)
+				p
+					label description
+					textarea(ng-model="item.description", required)
+				p
+					label extras
+					textarea(ng-model="item.extras")
+				p
+					label challenges
+					textarea(ng-model="item.challenges")
+				.wrap
+					label tags
+					.wrap
+						input(ng-model="item._tags")
+						a.add.glyphicon.glyphicon-plus-sign(ng-click="addInnerItem($event, item, 'tags')")
+						.sublist
+							a.removable(ng-repeat="tag in item.tags", title="{{tag}}", ng-click="removeItem($event, $index, item.tags)") {{tag}}
+				.wrap
+					label type
+					.wrap
+						input(ng-model="item._type")
+						a.add.glyphicon.glyphicon-plus-sign(ng-click="addInnerItem($event, item, 'type')")
+						.sublist
+							a.removable(ng-repeat="tag in item.type", title="{{tag}}", ng-click="removeItem($event, $index, item.type)") {{tag}}
+				.wrap
+					label media
+					.wrap
+						a.add.glyphicon.glyphicon-plus-sign(ng-click="addItem($event, item, 'media')")
+						ul.mediaList
+							li(ng-repeat="file in item.media")
+								a.remove(href="", ng-click="removeFile($event, file, 'img'); removeItem($event, $index, item.media)") x
+								p
+									label(for="file{{$index}}") file url
+									input(id="file{{$index}}", ng-model="file.link")
+								.fileUpload
+									input.hidden(type="file", ng-file-select="addFile($files, file, 'img', 'projects')", accept="image/*")
+									a.selector(ng-click="initFile($event)") modify
+									a.remover(ng-click="removeFile($event, file, 'img')", ng-show="file.img")
+										img(ng-src="{{file.img}}")
+								
+				

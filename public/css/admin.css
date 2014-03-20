@@ -1,0 +1,151 @@
+@import url('glyphs.css');
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .hidden { 
+	display: none !important; 
+	height: 0 !important;
+	opacity: 0 !important;
+}
+textarea.ng-invalid,
+input.ng-invalid { background:rgba(255,20,23,.3); /*rgba(25, 107, 167, .5)*/}
+input.ng-valid:not[disabled] { background:none;}
+html, body { width: 100%; height:100%; font-family: "Trebuchet MS", "Helvetica Neue", Arial, _sans; background:#EEF1ED;}
+html, body, div, span, p, h1, h2, h3, h4, h5, h6, ul, li { margin:0; padding:0;}
+
+
+
+
+h2 { min-height:1.5em;}
+a { display: block; overflow: hidden; text-decoration: none; color:#348aa1;} 
+a:hover { opacity: .4}
+ul, li { list-style-type: none;}
+img { width:auto;}
+img.ui-datepicker-trigger { margin-top:2px; float:left; cursor: pointer; width:1.6em; height:1.6em; position: absolute; background:url('../res/_img/calendar.png') 50% 50% no-repeat; border:none;}
+nav a,span { transition: background .5s, color .5s;}
+
+input[type=range] { float:left; margin-right:1em; min-width: inherit;}
+input[type=number],
+input[datepick] { min-width:inherit;}
+header, section, footer { clear:both; float:none;}
+
+nav { display: block; overflow: hidden; background:#9eb1a3; color:#fff;}
+nav ul li { float:left; }
+nav ul li a { color:#fff; padding:.3em 0.8em; }
+nav ul li a:hover,
+nav ul li a.selected { background:#348aa1; opacity:1;}
+nav .toggle { display:none;}
+
+form { margin:0;}
+form ul li > p { clear:both; float:none;}
+form label { vertical-align: top; min-width:19%; float:left; display: block;  padding:.3em;}
+form textarea { min-height:10em;}
+form textarea,
+form input { min-width:79%; border-radius:.4em; border:1px solid #ccc; padding:.3em;}
+form fieldset,
+form .element, 
+form .wrap > p, 
+form .subelement > p { clear:both; float:none;}
+
+form .element { margin-bottom:.4em; overflow: hidden; }
+form .element > ul > li { position: relative;}
+form .element .fileUpload { width:100px; height:100px; position: relative; background:#ededed url('../res/no-image.jpg') 50% 50% no-repeat; display:inline-block;}
+form .element .fileUpload a { display: inline-block; }
+form .element .fileUpload a.selector { position: absolute; bottom:0; text-align: center; width:100%; cursor: pointer; background: rgba(0,0,0,.5); color:#ccc; font-weight: bold; font-size:.8em;}
+form .element .fileUpload a.remover:hover { cursor: no-drop;}
+form .element .fileUpload img { width:100%;}
+
+form .subelement { clear:both; float:none; border-bottom:1px dotted rgba(0,0,0,.2); position: relative; overflow: hidden; padding:1em; margin-bottom:1.5em; background-color:#efefef;}
+form .subelement .time { clear:both;}
+form .subelement .time,
+form .subelement .wrap { display: block; overflow: hidden; margin-bottom:1em;}
+form .subelement .time label { width:auto;}
+form .subelement .time .wrap { margin:0;}
+form .subelement .time .wrap > label { float:left; min-width:0%;}
+form .subelement .time .wrap > p { clear: none; float:left; padding-top:.2em;}
+form .subelement .sublist { clear:both; float:none; }
+form .subelement .sublist a { display:inline-block; margin:0 .5em .5em 0; cursor:pointer; background:red; color:#fff; border-radius: .5em; padding:.3em;}
+form .subelement .sublist a:after { content:"x"; padding-left:.5em; color:transparent;}
+form .subelement .sublist a:hover:after { content:"x"; color:#ddd;}
+
+
+form .save,
+form .cancel { margin:.2em .3em;}
+form .remove { background: #9eb1a3; padding:.5em 1em; float:right;}
+form .add { padding-top:.5em; display:inline-block; cursor: pointer;}
+form .subelement .add { display:inline;}
+
+form .actions { background:#9eb1a3; padding:.5em;}
+form .actions > * { display:inline; font-size:.8em; padding:.5em 1em;}
+
+form fieldset { border:none; margin:0; padding:1em .5em .2em .5em; box-sizing: border-box;} 
+.ui-widget { font-size:.7em;}
+.alert { display:none; /*position:absolute; z-index:10; top:50%; left:50%; margin-left:-10em; width:20em;*/}
+/*.alert:before { 
+content: "";
+background: url('../res/_img/_icon_err.png') 50% 50% no-repeat;
+background-size: cover;
+width: 2em;
+height: 2em;
+display: block;
+overflow: hidden;
+margin-right: .5em;
+float: left;
+vertical-align: top;
+}*/
+
+.addUsers { display:inline-block; padding:.5em 1em; color:#fff; float:left; border-right:1px dotted #348aa1; margin-right:.5em;}
+.addUsers span:before { padding-right:.3em;}
+.addUsers:hover { background:#348aa1; opacity: 1; color:#bdd023;}
+.addUsers:hover span:before { color:white;}
+.preloader { background: white url('../res/_img/preloader.gif') 50% 50% no-repeat; display: inline-block;width: 2.3em;height: 2.3em;float: left; border-radius:.5em; margin:0 .5em;}
+
+#head nav { padding:.3em;}
+#head nav ul a:hover { opacity:1; background:#348aa1;}
+#head nav ul { display:block; overflow:hidden;}
+#head nav h2 { font-size:1.2em;}
+
+#head h1 { padding-bottom:.5em; vertical-align: top; line-height: 2em;}
+#head h1:before { vertical-align: top; content:""; display:inline-block; width:2em; height:2em; margin-right:.3em; background:url('../res/_img/logo.png') 50% 50% no-repeat; background-size: cover;}
+
+#menu nav { padding:.4em 0; }
+#menu nav ul li { padding:.2em .6em; }
+#menu nav ul li a { border-radius:.4em;} 
+
+#main > .cancel { float:right; margin-right:1em; font-size:1.5em;}
+#content { background:#d4dfd0; color:#348aa1;}
+#content h2 { position: absolute; left:0; top:.3em;}
+
+@media screen and (max-width:550px){
+	form label { clear:both; float:none;}
+	form textarea,
+	form input { min-width:auto; clear:both; float:none; width:100%; margin:0; font-size:1em;}
+	
+	form input[type=range] { float:left; width:76%;}
+	form input[type=number] { width:18%;}
+	
+	form .element > label { float:left; width:auto;}
+	form .element .fileUpload { overflow: hidden; width:100%;}
+	form .element .fileUpload img { width:100%;}
+	form .datepicker { box-sizing: border-box;}
+	form .datepicker input { width:92%; display:inline;}
+	form .subelement .sublist { margin:.4em 0;}
+	form .subelement .add { display: inline-block}
+
+	#menu nav ul li { padding:.15em; }
+	#menu nav a { width: 1em; height:1em; position: relative; padding:0.8em; color:transparent; border-radius:.4em;}
+	#menu nav a:after { 
+		font-family: 'Glyphicons Halflings';font-style: normal;font-weight: normal;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+		position:absolute; text-indent: initial; top:.8em; color:white;}
+	#menu nav a[data-id=details]:after { content:"\e021";}
+	#menu nav a[data-id=social]:after { content:"\e111";}
+	#menu nav a[data-id=school]:after { content:"\e043";}
+	#menu nav a[data-id=language]:after { content:"\e103";}
+	#menu nav a[data-id=skill]:after { content:"\e137";}
+	#menu nav a[data-id=employer]:after { content:"\e139";}
+	#menu nav a[data-id=project]:after { content:"\e032";}
+	#menu nav a.selected:after { color:#bdd023;}
+
+	form .actions > * { font-size:1em;}
+	.addUsers { clear:both; float:none; border:none; margin:0; }
+	.preloader { clear:both; float:none; margin:0 auto; display: block; margin-bottom:.5em;}
+	#head nav ul li { width:100%; clear:both; float:none; margin-bottom:.5em;}
+}
