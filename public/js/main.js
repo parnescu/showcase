@@ -76,7 +76,10 @@ angular.module('showcase',['ngTouch','ngRoute'])
 			})
 		}
 	
-		Loader.getResource('api/users/530e07acb3c959c0219d6d5b')
+		$scope.init = function(userId){
+			userId = userId || '538318b45707460200a7d888';
+
+			Loader.getResource('api/users/'+userId);
 			.then(
 				function(results){
 					if (results.success){
@@ -95,6 +98,10 @@ angular.module('showcase',['ngTouch','ngRoute'])
 					alert('boom... something went bad')
 				}
 			);
+		}
+
+		$scope.init();
+		
 	}])
 
 angular.bootstrap(document, ['showcase'])
