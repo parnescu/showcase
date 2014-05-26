@@ -79,7 +79,7 @@ angular.module('showcase',['ngTouch','ngRoute'])
 		$scope.init = function(userId){
 			userId = userId || '538318b45707460200a7d888';
 
-			Loader.getResource('api/users/'+userId);
+			Loader.getResource('api/users/'+userId)
 			.then(
 				function(results){
 					if (results.success){
